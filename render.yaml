@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: investment-discord-bot
+    env: python
+    region: oregon
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python bot.py"
+    autoDeploy: true
+    envVars:
+      - key: DISCORD_TOKEN
+        sync: false
+      - key: DISCORD_CHANNEL_ID
+        sync: false
+      - key: POLYGON_API_KEY
+        sync: false
+      - key: EMAIL_FROM
+        sync: false
+      - key: EMAIL_PASS
+        sync: false
+      - key: ALERT_EMAIL
+        sync: false
